@@ -7,8 +7,7 @@ scriptname=${0##*/}
 
 notice()
 {
-	echo "$*"
-	echo "$scriptname: $*" > /dev/kmsg
+    log -t "$scriptname" -i "$*"
 }
 
 # Globals
