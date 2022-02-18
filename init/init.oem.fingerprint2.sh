@@ -14,7 +14,7 @@ script_name=${0##*/}
 # remove the file postfix
 script_name=${script_name%.*}
 function notice {
-    log -t "$script_name" -i "$*"
+    log -t "$script_name" -p i "$*"
 }
 
 PROP_GKI_PATH=ro.vendor.mot.gki.path
