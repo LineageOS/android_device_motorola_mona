@@ -43,8 +43,6 @@ vendor/lib64/libBSTNodeUtils.so
 vendor/lib64/libPlatformValidatorShared.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libSnpeHtpPrepare.so
-vendor/lib64/libSnpeHtpV68Stub.so
-vendor/lib64/libSnpeHtpV69Stub.so
 vendor/lib64/libSnpeHtpV73Stub.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
@@ -72,8 +70,6 @@ vendor/lib64/libhdr10plus.so
 vendor/lib64/libhdr_impl.so
 vendor/lib64/libhme.so
 vendor/lib64/libipebpsstriping.so
-vendor/lib64/libipebpsstriping170.so
-vendor/lib64/libipebpsstriping480.so
 vendor/lib64/libjpege.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmfGhostDetection.so
@@ -262,9 +258,7 @@ vendor/lib64/com.qti.feature2.hdr.so
 vendor/lib64/com.qti.feature2.mcreprocrt.so
 vendor/lib64/com.qti.feature2.memcpy.so
 vendor/lib64/com.qti.feature2.mfsr.netrani.so
-vendor/lib64/com.qti.feature2.mfsr.sm8450.so
 vendor/lib64/com.qti.feature2.mfsr.so
-vendor/lib64/com.qti.feature2.ml.fillmore.so
 vendor/lib64/com.qti.feature2.ml.so
 vendor/lib64/com.qti.feature2.mux.so
 vendor/lib64/com.qti.feature2.qcfa.so
@@ -297,7 +291,6 @@ vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_ov50a_qtech.bin
 vendor/lib64/camera/com.qti.sensormodule.mot_avatrn_s5kjd1_ofilm.bin
 
 # Camera - tuned
-vendor/lib64/camera/com.qti.tuned.default.bin
 vendor/lib64/camera/com.qti.tuned.mot_avatrn_gc13a2.bin
 vendor/lib64/camera/com.qti.tuned.mot_avatrn_hi1336.bin
 vendor/lib64/camera/com.qti.tuned.mot_avatrn_imx896.bin
