@@ -13,7 +13,7 @@
 script_name=${0##*/}
 # remove the file postfix
 script_name=${script_name%.*}
-function log {
+function notice {
     echo "$script_name: $*" > /dev/kmsg
 }
 
@@ -35,17 +35,17 @@ last_vendor_index=`expr ${#vendor_list[@]} - 1`
 vendor_list_size=${#vendor_list[@]}
 
 if [ $vendor_list_size != ${#kernel_so_list[@]} ]; then
-    log "error, vendor_list.size is not equal to kernel_so_list"
+    notice "error, vendor_list.size is not equal to kernel_so_list"
     return 255
 fi
 
 if [ $vendor_list_size != ${#kernel_so_name_list[@]} ]; then
-    log "error, vendor_list.size is not equal to kernel_so_name_list"
+    notice "error, vendor_list.size is not equal to kernel_so_name_list"
     return 255
 fi
 
 if [ $vendor_list_size != ${#hal_list[@]} ]; then
-    log "error, vendor_list.size is not equal to hal_list"
+    notice "error, vendor_list.size is not equal to hal_list"
     return 255
 fi
 
@@ -93,32 +93,32 @@ function start_hal_service(){
     sleep 1
     setprop $prop_fps_ident ${vendor_list[$1]}
 
-    log "start ${hal_list[$1]}"
+    notice "start ${hal_list[$1]}"
     start ${hal_list[$1]}
 
     for ii in $(seq 1 $MAX_TIMES)
     do
         sleep 0.1
         fps_status=$(getprop $prop_fps_status)
-        # log "check fps vendor status: $fps_status"
+        # notice "check fps vendor status: $fps_status"
         if [ $fps_status != $FPS_STATUS_NONE ]; then
             break
         fi
     done
 
-    log "fingerprint HAL status: $fps_status"
+    notice "fingerprint HAL status: $fps_status"
     if [ $fps_status == $FPS_STATUS_OK ]; then
-        log "start ${hal_list[$1]} hal success"
+        notice "start ${hal_list[$1]} hal success"
         setprop $prop_persist_fps ${vendor_list[$1]}
         return 0
     fi
 
-    log "start ${hal_list[$1]} hal failed, "
+    notice "start ${hal_list[$1]} hal failed, "
     setprop ctl.stop ${hal_list[$1]}
     sleep 0.1
-    log "start ${hal_list[$1]} hal failed, remove kernel so: ${kernel_so_name_list[$1]} "
+    notice "start ${hal_list[$1]} hal failed, remove kernel so: ${kernel_so_name_list[$1]} "
     rmmod ${kernel_so_name_list[$1]}
-    #log "skip remove kernel so: ${kernel_so_name_list[$1]} "
+    #notice "skip remove kernel so: ${kernel_so_name_list[$1]} "
     # if failed,return 255
     return 255
 }
@@ -134,13 +134,13 @@ fps_vendor2=$(cat $persist_fps_id2)
 if [ -z $fps_vendor2 ]; then
     fps_vendor2=$FPS_VENDOR_NONE
 fi
-log "FPS vendor (last): $fps_vendor2"
+notice "FPS vendor (last): $fps_vendor2"
 
 fps_vendor=$(cat $persist_fps_id)
 if [ -z $fps_vendor ]; then
     fps_vendor=$FPS_VENDOR_NONE
 fi
-log "FPS vendor (current): $fps_vendor"
+notice "FPS vendor (current): $fps_vendor"
 
 vendor_index=255
 # try to start the most recent success launched sensor.
@@ -148,7 +148,7 @@ if [ $fps_vendor != $FPS_STATUS_NONE ]; then
     find_vendor_index $fps_vendor
     vendor_index=$?
     if [ $vendor_index != 255 ]; then
-        log "start $fps_vendor hal service"
+        notice "start $fps_vendor hal service"
         start_hal_service $vendor_index
         if [ $? != 255 ]; then
             return 0
@@ -164,7 +164,7 @@ do
     fi
 
     if [ ! -e ${kernel_so_list[$temp_vendor_index]} ]; then
-        log "does not exist ${kernel_so_list[$temp_vendor_index]},ignore this fingerprint sensor"
+        notice "does not exist ${kernel_so_list[$temp_vendor_index]},ignore this fingerprint sensor"
         continue
     fi
 
@@ -175,6 +175,6 @@ do
     fi
 done
 
-log "error, no fingerprint sensor found"
+notice "error, no fingerprint sensor found"
 setprop $prop_persist_fps $FPS_VENDOR_NONE
 echo $FPS_VENDOR_NONE > $persist_fps_id
