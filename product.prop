@@ -9,7 +9,7 @@ ro.vendor.product.display=moto g stylus - 2025
 ro.opa.device_model_id=motorola-mona
 
 # Radio
-ro.vendor.radio.imei.sv=28
+ro.vendor.radio.imei.sv=3
 
 # SKU specific properties
 import /product/etc/hardware.sku.${ro.boot.hardware.sku}.prop

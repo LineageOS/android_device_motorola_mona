@@ -67,7 +67,10 @@ $(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supp
 
 # Properties
 PRODUCT_PACKAGES += \
-    hardware.sku.XT2405V.prop
+    hardware.sku.XT2517-1.prop \
+    hardware.sku.XT2517-2.prop \
+    hardware.sku.XT2517-3.prop \
+    hardware.sku.XT2517V.prop
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
