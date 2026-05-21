@@ -81,11 +81,8 @@ $(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 # VINTF
 ODM_MANIFEST_SKUS += dn n
-ODM_MANIFEST_DN_FILES := \
-    $(LOCAL_PATH)/vintf/manifest_dn.xml
-ODM_MANIFEST_N_FILES := \
-    $(LOCAL_PATH)/vintf/manifest_n.xml \
-    device/motorola/sm6475-common/vintf/manifest_ss.xml
+ODM_MANIFEST_DN_FILES := $(LOCAL_PATH)/vintf/manifest_dn.xml
+ODM_MANIFEST_N_FILES := $(LOCAL_PATH)/vintf/manifest_n.xml
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
