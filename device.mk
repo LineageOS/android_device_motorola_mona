@@ -29,8 +29,8 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 BOARD_SHIPPING_API_LEVEL := 31
 PRODUCT_SHIPPING_API_LEVEL := 34
 
-# Inherit from motorola sm7435-common
-$(call inherit-product, device/motorola/sm7435-common/common.mk)
+# Inherit from motorola sm6475-common
+$(call inherit-product, device/motorola/sm6475-common/common.mk)
 
 # Overlay
 PRODUCT_PACKAGES += \
@@ -76,7 +76,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Vibrator
-$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm7435-richtap)
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm6475-richtap)
 $(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 # VINTF
@@ -85,7 +85,7 @@ ODM_MANIFEST_DN_FILES := \
     $(LOCAL_PATH)/vintf/manifest_dn.xml
 ODM_MANIFEST_N_FILES := \
     $(LOCAL_PATH)/vintf/manifest_n.xml \
-    device/motorola/sm7435-common/vintf/manifest_ss.xml
+    device/motorola/sm6475-common/vintf/manifest_ss.xml
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
