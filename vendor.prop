@@ -13,8 +13,11 @@ persist.vendor.camera.physical.num=3
 # Display
 ro.vendor.display.foss=1
 ro.vendor.display.sensortype=2
+ro.vendor.display.svi=1
 vendor.display.foss.config=1
 vendor.display.foss.config_path=/vendor/etc/display/FOSSConfig.xml
+vendor.display.svi.config=1
+vendor.display.svi.config_path=/vendor/etc/display/SVIConfig.xml
 
 # Fingerprint
 ro.hardware.fingerprint=goodix
