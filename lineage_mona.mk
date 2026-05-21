@@ -19,21 +19,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from avatrn device
-$(call inherit-product, device/motorola/avatrn/device.mk)
+# Inherit from mona device
+$(call inherit-product, device/motorola/mona/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_avatrn
-PRODUCT_DEVICE := avatrn
+PRODUCT_NAME := lineage_mona
+PRODUCT_DEVICE := mona
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := motorola edge 2024
+PRODUCT_MODEL := moto g stylus - 2025
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceProduct="avatrn_g" \
-    BuildDesc="avatrn_g-user 16 W1UANS36H.29-25-2-6 9d51f-e4bde5 release-keys MW-413" \
-    BuildFingerprint="motorola/avatrn_g/avatrn:16/W1UANS36H.29-25-2-6/9d51f-e4bde5:user/release-keys"
+    DeviceProduct="mona_g" \
+    BuildDesc="mona_g-user 16 W1VAS36.62-22-16-1-18 285398a-18976c release-keys MW-292" \
+    BuildFingerprint="motorola/mona_g/mona:16/W1VAS36.62-22-16-1-18/285398a-18976c:user/release-keys"
