@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_avatrn.mk
+    $(LOCAL_DIR)/lineage_mona.mk

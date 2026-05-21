@@ -167,7 +167,7 @@
          If the string contains a '%s' format string then that substring will be replaced
          with the value of Build.MODEL , ie
          <string name="config_mms_user_agent">OemName%s</string> -->
-    <string name="config_mms_user_agent" translatable="false">motorolaedge2024</string>
+    <string name="config_mms_user_agent" translatable="false">motogstylus2025</string>
 
     <!-- MMS user agent prolfile url, for example https://uaprof.oem_name.com/DeviceName.xml
          if the string contains a '%s' format string then that substring will be replaced

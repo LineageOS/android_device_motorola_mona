@@ -92,4 +92,4 @@ ODM_MANIFEST_N_FILES := \
     device/motorola/sm7435-common/vintf/manifest_ss.xml
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/avatrn/avatrn-vendor.mk)
+$(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
