@@ -259,7 +259,7 @@
 
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string name="config_mainBuiltInDisplayCutout" translatable="false">M -42,0 L 42,0 L 42,106 L -42,106 Z</string>
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">M -45,0 L 45,0 L 45,115 L -45,115 Z</string>
 
     <!-- The default refresh rate for a given device. Change this value to set a higher default
          refresh rate. If the hardware composer on the device supports display modes with a higher
@@ -275,7 +275,7 @@
          the framework from using higher refresh rates, even if display modes with higher refresh
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
-    <integer name="config_defaultPeakRefreshRate">144</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendors to tune the curves to have exact same brightness for different refresh rate. So
@@ -297,14 +297,6 @@
     <!-- Low zone lux thresholds -->
     <array name="config_ambientThresholdsOfPeakRefreshRate" translatable="false">
         <item>-1</item>
-    </array>
-
-    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
-         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
-         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
-         and Strength as defined in Authenticators.java -->
-    <array name="config_biometric_sensors" translatable="false">
-        <item>0:2:15</item>
     </array>
 
     <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
