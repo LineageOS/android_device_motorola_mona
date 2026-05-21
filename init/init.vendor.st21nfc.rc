@@ -9,29 +9,23 @@ on early-boot
 	chown secure_element secure_element /dev/st54spi
 	chmod 0660 /dev/st54spi
 
-on property:ro.vendor.hw.nfc=ese_st
-	start gto_secure_element_hal_service_1_2
+on property:ro.vendor.hw.felica=true && property:ro.vendor.hw.nfc=ese_st
+	setprop persist.vendor.nfc.st_nfc_felica_ese 1
+	setprop persist.vendor.nfc.config_file_name libnfc-nci-st-felica.conf
 
-service gto_secure_element_hal_service_1_2 /vendor/bin/hw/android.hardware.secure_element@1.2-service-gto
-	override
-	class hal
-	user secure_element
-	group secure_element nfc
-	disabled
+on property:ro.boot.revision=dvt1
+	setprop persist.vendor.nfc.config_hal_name libnfc-hal-st-dvt1.conf
 
 on property:ro.vendor.hw.nfc=true
 	start vendor.st_nfc_hal_service
 
 on property:ro.vendor.hw.nfc=st
-	setprop persist.vendor.nfc.config_file_name libnfc-hal-st.conf
 	start vendor.st_nfc_hal_service
 
 on property:ro.vendor.hw.nfc=ese_st
-	setprop persist.vendor.nfc.config_file_name libnfc-hal-st54j.conf
 	start vendor.st_nfc_hal_service
 
 on property:ro.vendor.hw.nfc=esim_st
-	setprop persist.vendor.nfc.config_file_name libnfc-hal-st54uicc.conf
 	start vendor.st_nfc_hal_service
 
 service vendor.st_nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.st

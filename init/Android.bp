@@ -16,3 +16,15 @@ prebuilt_etc {
     sub_dir: "init/hw",
     vendor: true,
 }
+
+sh_binary {
+    name: "init.mmi.cap.sh",
+    src: "init.mmi.cap.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.oem.fingerprint2.sh",
+    src: "init.oem.fingerprint2.sh",
+    vendor: true,
+}
