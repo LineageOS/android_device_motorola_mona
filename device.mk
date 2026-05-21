@@ -51,6 +51,8 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mmi.overlay.rc \
+    init.mmi.cap.sh \
+    init.oem.fingerprint2.sh \
     init.vendor.st21nfc.rc
 
 # NFC
