@@ -93,6 +93,7 @@ vendor/lib64/libmpbase.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libopestriping.so
+vendor/lib64/libos.so
 vendor/lib64/libportrait_repair_ppl3_ocl.so
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
@@ -100,7 +101,9 @@ vendor/lib64/libqllengine.so
 vendor/lib64/libqshcamera.so
 vendor/lib64/libsfeShiftExtrapolation.so
 vendor/lib64/libswregistrationalgo.so
+vendor/lib64/libsynx.so
 vendor/lib64/libtfestriping.so
+vendor/lib64/libthreadutils.so
 vendor/lib64/libubifocus.so
 vendor/lib64/libvideoml.so
 vendor/lib64/libvidhance.so
