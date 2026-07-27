@@ -28,6 +28,10 @@ namespace_imports = [
 
 
 blob_fixups: blob_fixups_user_type = {
+    ('vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-goodixservice',
+        'vendor/bin/hw/android.hardware.biometrics.fingerprint-service-rbs'): blob_fixup()
+        .replace_needed('android.hardware.biometrics.common-V3-ndk.so', 'android.hardware.biometrics.common-V4-ndk.so')
+        .replace_needed('android.hardware.biometrics.fingerprint-V3-ndk.so', 'android.hardware.biometrics.fingerprint-V4-ndk.so'),
     ('vendor/bin/hw/motorola.hardware.sensorext-service',
         'vendor/bin/hw/vendor.qti.camera.provider-service_64', 'vendor/lib64/camx.provider-impl.so'): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
