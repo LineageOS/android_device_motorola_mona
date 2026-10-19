@@ -48,6 +48,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/configs/audio/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.moto_sm6475_fod
+
 # Init
 PRODUCT_PACKAGES += \
     init.mmi.overlay.rc \
